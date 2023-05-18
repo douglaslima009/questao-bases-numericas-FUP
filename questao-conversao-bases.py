@@ -1,41 +1,42 @@
-def decimal_para_binario(decimal):
+#Aluno: Douglas Lima Menezes
+#Engenharia de software 2023.1
+
+def dectobin(decimal):
     return bin(decimal)[2:]
-
-def binario_para_decimal(binario):
+def bintodec(binario):
     return int(binario, 2)
-
-def decimal_para_hexadecimal(decimal):
+def dectohex(decimal):
     return hex(decimal)[2:].upper()
 
 def exibir_menu():
     print("Menu:")
-    print("1 - Converter um número Decimal para Binário")
-    print("2 - Converter um número Binário para Decimal")
-    print("3 - Converter um número Decimal em Hexadecimal")
+    print("1 - Conversão de Decimal para Binário")
+    print("2 - Conversão de Binário para Decimal")
+    print("3 - Conversão de Decimal em Hexadecimal")
     print("0 - Encerrar")
 
 def main():
     while True:
         exibir_menu()
-        opcao = input("Digite a opção desejada: ")
+        opcao = input("Escolha uma opção: ")
 
         if opcao == "1":
-            decimal = int(input("Digite um número decimal: "))
-            binario = decimal_para_binario(decimal)
-            print(f"O número binário correspondente é: {binario}")
+            dec = int(input("Digite um número decimal: "))
+            bin = dectobin(dec)
+            print(f"O número decimal {dec} em binário corresponde a: {bin}")
         elif opcao == "2":
-            binario = input("Digite um número binário: ")
-            decimal = binario_para_decimal(binario)
-            print(f"O número decimal correspondente é: {decimal}")
+            bin = input("Digite um número binário: ")
+            dec = bintodec(bin)
+            print(f"O número binário {bin} em decimal corresponde a: {dec}")
         elif opcao == "3":
-            decimal = int(input("Digite um número decimal: "))
-            hexadecimal = decimal_para_hexadecimal(decimal)
-            print(f"O número hexadecimal correspondente é: {hexadecimal}")
+            dec = int(input("Digite um número decimal: "))
+            hex = dectohex(dec)
+            print(f"O número decimal {dec} em hexadecimal corresponde a: {hex}")
         elif opcao == "0":
-            print("Encerrando o programa...")
+            print("Encerrado.")
             break
         else:
-            print("Opção inválida. Por favor, digite uma opção válida.")
+            print("Não foi possível realizar esta operação. Por favor, digite uma opção válida.")
 
 if __name__ == "__main__":
     main()
